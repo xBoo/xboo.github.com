@@ -250,9 +250,9 @@ docker rm -f logstash
 docker run --rm  \
 -v /opt/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml \
 -v /opt/logstash/pipeline/logstash.conf:/usr/share/logstash/pipeline/logstash.conf \
--v
+-v /opt/logstash/data/:/usr/share/logstash/data/ \
 --name=logstash \
-logstash:6.7.1 
+logstash:6.5.4
 
 
 #### Kabana
