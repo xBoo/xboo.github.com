@@ -6,7 +6,7 @@
 1. 业务双写（具有侵入性）
 2. 数据库同步 
 
-!["architecture"](../img/logstash_architecture.png)
+!["architecture"](https://raw.githubusercontent.com/xBoo/xboo.github.com/master/img//logstash_architecture.png)
 
 由于业务双写需要更改业务代码，一般不建议采用此种方式，除非有强一致性要求，或者对业务侵入不敏感的系统可以采取此种方式：
 + 强一致性：同步通过HTTP请求写入 ElasticSearch
@@ -108,17 +108,17 @@ logstash:6.7.1
 ```
 ## 通过Kibana查询同步结果
 在 Kibana 中创建 syncuser index，即可以查看到已经同步的数据：
-![](../img/logstash_kibana1.png)
+![](https://raw.githubusercontent.com/xBoo/xboo.github.com/master/img//logstash_kibana1.png)
 
 尝试对数据库数据做更新操作,将名为 William 的用户年龄修改为100（记得同时要更新lastupdatetime 字段）：
 ```
 UPDATE `user` SET age=100, lastupdatetime=NOW() WHERE `name`='William';
 SELECT * from `user`
 ```
-![](../img/logstash_mysql1.png)
+![](https://raw.githubusercontent.com/xBoo/xboo.github.com/master/img//logstash_mysql1.png)
 
 再次查看 Kibana 中的数据，可以看到该数据已经成功同步：
-![](../img/logstash_kibana2.png)
+![](https://raw.githubusercontent.com/xBoo/xboo.github.com/master/img//logstash_kibana2.png)
 
 ## 结语
 根据上述过程，我们完成了简单的单表数据定时同步至 ElasticSearch 过程，但是在实际使用过程中，需要注意以下问题：
