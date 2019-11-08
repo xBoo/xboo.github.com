@@ -6,7 +6,7 @@ email: bobit@live.cn
 description: "持之以恒."
 keyword: "Xboo"
 url: "http://xboo.github.io"          # your host, for absolute URL
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "http://xboo.github.io"      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/xBoo/xboo.github.com.git" # you code repository
 
 # Sidebar settings
